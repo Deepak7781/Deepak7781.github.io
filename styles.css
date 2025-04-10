@@ -1,66 +1,117 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    padding-bottom: 60px; /* Adds space at the bottom so footer doesn’t overlap */
+    padding-bottom: 80px; /* Space for footer */
     line-height: 1.6;
-    background-color: #f4f4f4;
-    color: #333;
+    background-color: #000; /* Black as primary color */
+    color: #fff; /* White text for contrast */
 }
 
 header {
-    background-color: #1a3c5e;
-    color: white;
+    background-color: #000;
+    color: #00f; /* Blue as secondary color */
     text-align: center;
-    padding: 2rem;
+    padding: 2.5rem 1rem;
+    border-bottom: 3px solid #00f;
 }
 
 header h1 {
     margin: 0;
-    font-size: 2.5rem;
+    font-size: 3rem;
+    color: #fff;
 }
 
 header p {
     margin: 0.5rem 0;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
 }
 
-#intro, #projects {
-    max-width: 800px;
-    margin: 2rem auto;
-    padding: 0 1rem;
+main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+section {
+    margin: 3rem 0;
 }
 
 h2 {
-    color: #1a3c5e;
-    border-bottom: 2px solid #1a3c5e;
+    color: #00f; /* Blue headers */
+    font-size: 2rem;
+    border-bottom: 2px solid #00f;
     padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+#intro p {
+    font-size: 1.1rem;
+    margin: 1rem 0;
+}
+
+#skills ul {
+    list-style: none;
+    padding: 0;
+}
+
+#skills li {
+    background: #1a1a1a; /* Darker shade for contrast */
+    padding: 0.8rem;
+    margin: 0.5rem 0;
+    border-left: 4px solid #00f;
+    font-size: 1.1rem;
 }
 
 .project-card {
-    background: white;
-    padding: 1rem;
-    margin: 1rem 0;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background: #1a1a1a;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 255, 0.1); /* Blue shadow */
     transition: transform 0.3s;
 }
 
 .project-card:hover {
-    transform: scale(1.02);
+    transform: translateY(-5px);
+}
+
+.project-card h3 {
+    margin: 0 0 0.5rem;
+    color: #00f;
+    font-size: 1.5rem;
+}
+
+.project-card p {
+    margin: 0.5rem 0;
+}
+
+.project-card a {
+    color: #00f;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.project-card a:hover {
+    text-decoration: underline;
 }
 
 footer {
+    background-color: #000;
+    color: #fff;
     text-align: center;
-    padding: 1rem;
-    background-color: #1a3c5e;
-    color: white;
-    width: 100%;
-    /* Removed position: fixed; and bottom: 0; */
+    padding: 1.5rem;
+    border-top: 3px solid #00f;
 }
+
+footer p {
+    margin: 0.5rem 0;
+}
+
 footer a {
-    color: #a8c7e6;
+    color: #00f;
     text-decoration: none;
+    margin: 0 0.5rem;
 }
 
 footer a:hover {
