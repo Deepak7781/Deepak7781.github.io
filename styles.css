@@ -2,6 +2,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    padding-bottom: 60px; /* Adds space at the bottom so footer doesn’t overlap */
     line-height: 1.6;
     background-color: #f4f4f4;
     color: #333;
@@ -9,7 +10,7 @@ body {
 
 header {
     background-color: #1a3c5e;
-    color : white;
+    color: white;
     text-align: center;
     padding: 2rem;
 }
@@ -31,10 +32,9 @@ header p {
 }
 
 h2 {
-    color:#1a3c5e;
+    color: #1a3c5e;
     border-bottom: 2px solid #1a3c5e;
     padding-bottom: 0.5rem;
-
 }
 
 .project-card {
@@ -42,12 +42,12 @@ h2 {
     padding: 1rem;
     margin: 1rem 0;
     border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s;
 }
 
 .project-card:hover {
-    transform: scsle(1.02);
+    transform: scale(1.02);
 }
 
 footer {
@@ -55,17 +55,14 @@ footer {
     padding: 1rem;
     background-color: #1a3c5e;
     color: white;
-    position: fixed;
-    bottom: 0;
     width: 100%;
+    /* Removed position: fixed; and bottom: 0; */
 }
-
-footer a{
-    color:#a8c7e6;
+footer a {
+    color: #a8c7e6;
     text-decoration: none;
 }
 
-footer a:hober {
+footer a:hover {
     text-decoration: underline;
 }
-
