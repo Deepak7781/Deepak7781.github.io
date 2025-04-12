@@ -4,8 +4,63 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blade Element Theory</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Simulation of Blade Element Theory</h1>
+    <div class="container">
+        <h1>Blade Element Theory Simulation</h1>
+        <div id="bg">
+            <form id="bet-form">
+                <h2>Input Parameters</h2>
+                <div class="input-group">
+                    <label for="chord">Chord Length (c, m):</label>
+                    <input type="number" id="chord" name="chord" step="any" required>
+                </div>
+                <div class="input-group">
+                    <label for="radius">Blade Radius (R, m):</label>
+                    <input type="number" id="radius" name="radius" step="any" required>
+                </div>
+                <div class="input-group">
+                    <label for="twist">Twist Angle (degrees):</label>
+                    <input type="number" id="twist" name="twist" step="any" required>
+                </div>
+                <div class="input-group">
+                    <label for="blades">Number of Blades (B):</label>
+                    <input type="number" id="blades" name="blades" min="1" step="1" required>
+                </div>
+                <div class="input-group">
+                    <label for="velocity">Free Stream Velocity (V_inf, m/s):</label>
+                    <input type="number" id="velocity" name="velocity" step="any" required>
+                </div>
+                <div class="input-group">
+                    <label for="omega">Angular Velocity (ω, rad/s):</label>
+                    <input type="number" id="omega" name="omega" step="any" required>
+                </div>
+                <div class="input-group">
+                    <label for="elements">Number of Elements (N):</label>
+                    <input type="number" id="elements" name="elements" min="1" step="1" required>
+                </div>
+                <div class="input-group">
+                    <label for="airfoil">Airfoil Name (e.g., NACA0012):</label>
+                    <input type="text" id="airfoil" name="airfoil" required>
+                </div>
+                <div class="input-group">
+                    <label for="alpha">Alpha Range (start end step, e.g., -10 10 0.5):</label>
+                    <input type="text" id="alpha" name="alpha" placeholder="-10 10 0.5" required>
+                </div>
+                <div class="input-group">
+                    <label for="reynolds">Reynolds Number (e.g., 100000):</label>
+                    <input type="number" id="reynolds" name="reynolds" step="1" required>
+                </div>
+                <div class="input-group">
+                    <label for="xfoil-file">Upload XFOIL Data (optional):</label>
+                    <input type="file" id="xfoil-file" name="xfoil-file" accept=".txt">
+                </div>
+                <button type="submit">Run Simulation</button>
+            </form>
+            <div id="results"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
