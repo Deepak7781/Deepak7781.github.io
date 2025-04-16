@@ -137,6 +137,7 @@ async function parseXfoilFile(file) {
     return data.length > 0 ? data : null;
 }
 
+// Form submission handler
 document.getElementById('bet-form').addEventListener('submit', async function(event) {
     event.preventDefault();
 
@@ -251,4 +252,22 @@ document.getElementById('bet-form').addEventListener('submit', async function(ev
             <p style="font-size: 0.9em;">${debugInfo.join('<br>')}</p>
         </details>
     `;
+});
+
+// Reset form handler
+document.getElementById('bet-form').addEventListener('reset', function() {
+    const resultsDiv = document.getElementById('results');
+    resultsDiv.innerHTML = '';
+    document.querySelectorAll('#bet-form input').forEach(input => {
+        input.style.border = 'none';
+    });
+    document.getElementById('loading').style.display = 'none';
+});
+
+// Help toggle handler
+document.getElementById('help-toggle').addEventListener('click', function() {
+    const helpSection = document.getElementById('help-section');
+    const isActive = helpSection.classList.contains('active');
+    helpSection.classList.toggle('active');
+    this.textContent = isActive ? 'Show Help' : 'Hide Help';
 });

@@ -5,105 +5,218 @@
 }
 
 body {
-    background: linear-gradient(135deg, #1a1a1a, #000000);
+    background: #000000;
     min-height: 100vh;
     display: flex;
     justify-content: center;
-    align-items: center;
-    font-family: Arial, sans-serif;
+    align-items: flex-start;
+    font-family: 'Roboto Condensed', sans-serif;
+    position: relative;
+    overflow-y: auto;
+    color: #e6f0ff;
+    padding: 20px 0;
+}
+
+/* Static Propeller Effect with Central Hub */
+body::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 700px;
+    height: 700px;
+    transform: translate(-50%, -50%);
+    background: 
+        /* Blade 1 (0 degrees) */
+        linear-gradient(0deg, rgba(255, 255, 255, 0.08) 15%, transparent 25%) 220px 0,
+        /* Blade 2 (120 degrees) */
+        linear-gradient(120deg, rgba(255, 255, 255, 0.08) 15%, transparent 25%) -110px 190px,
+        /* Blade 3 (240 degrees) */
+        linear-gradient(240deg, rgba(255, 255, 255, 0.08) 15%, transparent 25%) -110px -190px,
+        /* Central Hub */
+        radial-gradient(circle, rgba(255, 255, 255, 0.1) 20%, transparent 30%) 0 0;
+    background-size: 50px 220px, 50px 220px, 50px 220px, 80px 80px;
+    background-repeat: no-repeat;
+    background-position: 220px 0, -110px 190px, -110px -190px, center;
+    filter: blur(10px);
+    opacity: 0.7;
+    z-index: -1;
 }
 
 .container {
     text-align: center;
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 600px;
+    padding: 20px;
 }
 
 h1 {
-    color: aliceblue;
-    font-size: 2.5em;
-    margin-bottom: 20px;
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    color: #e6f0ff;
+    font-size: 2.8em;
+    font-weight: 700;
+    margin-bottom: 25px;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.5), 0 0 12px rgba(255, 255, 255, 0.3);
 }
 
 #bg {
-    width: 500px;
-    padding: 20px;
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.8));
+    width: 100%;
+    padding: 25px;
+    background: linear-gradient(145deg, rgba(30, 30, 50, 0.9), rgba(10, 10, 20, 0.95));
     margin: 0 auto;
-    border-radius: 15px;
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.15), inset 0 0 10px rgba(255, 255, 255, 0.1);
+    max-height: 80vh;
+    overflow-y: auto;
 }
 
 #bet-form {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 20px;
 }
 
 #bet-form h2 {
-    color: aliceblue;
-    font-size: 1.5em;
-    margin-bottom: 10px;
+    color: #e6f0ff;
+    font-size: 1.6em;
+    font-weight: 400;
+    margin-bottom: 15px;
 }
 
 .input-group {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 10px;
+    gap: 15px;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .input-group label {
-    color: aliceblue;
-    font-size: 1em;
+    color: #e6f0ff;
+    font-size: 1.1em;
+    font-weight: 300;
     flex: 1;
     text-align: left;
 }
 
 .input-group input {
     flex: 1;
-    padding: 8px;
+    padding: 10px;
     border: none;
-    border-radius: 5px;
-    background: rgba(255, 255, 255, 0.1);
-    color: aliceblue;
+    border-radius: 8px;
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.05));
+    color: #e6f0ff;
     font-size: 1em;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 300;
+    transition: background 0.3s, box-shadow 0.3s;
 }
 
 .input-group input:focus {
     outline: none;
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
 }
 
 .input-group input[type="file"] {
     background: none;
-    padding: 8px 0;
+    padding: 10px 0;
+}
+
+.button-group {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 10px;
 }
 
 button {
-    padding: 10px;
+    padding: 12px 20px;
     border: none;
-    border-radius: 5px;
-    background: linear-gradient(45deg, #cccccc, #ffffff);
-    color: #000;
-    font-size: 1.1em;
+    border-radius: 8px;
+    background: linear-gradient(45deg, #b0b0ff, #e0e0ff);
+    color: #1a1a1a;
+    font-size: 1.2em;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 400;
     cursor: pointer;
-    transition: background 0.3s;
+    transition: transform 0.2s, background 0.3s;
 }
 
 button:hover {
-    background: linear-gradient(45deg, #ffffff, #cccccc);
+    background: linear-gradient(45deg, #e0e0ff, #b0b0ff);
+    transform: translateY(-2px);
+}
+
+button[type="reset"] {
+    background: linear-gradient(45deg, #ff9999, #ffcccc);
+}
+
+button[type="reset"]:hover {
+    background: linear-gradient(45deg, #ffcccc, #ff9999);
 }
 
 #results {
-    margin-top: 20px;
-    padding: 15px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-    color: aliceblue;
+    margin-top: 25px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    color: #e6f0ff;
     font-size: 1.1em;
+    font-weight: 300;
     text-align: left;
+    min-height: 100px;
 }
 
 #results p {
-    margin: 5px 0;
+    margin: 8px 0;
+}
+
+#loading {
+    display: none;
+    text-align: center;
+    color: #e6f0ff;
+    font-size: 1.1em;
+    margin-top: 10px;
+}
+
+#help-section {
+    margin-top: 20px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    display: none;
+}
+
+#help-section.active {
+    display: block;
+}
+
+#help-section h3 {
+    font-size: 1.3em;
+    margin-bottom: 10px;
+}
+
+#help-section p {
+    font-size: 1em;
+    font-weight: 300;
+    line-height: 1.5;
+}
+
+#help-toggle {
+    background: linear-gradient(45deg, #99ccff, #cce6ff);
+    margin-top: 10px;
+}
+
+#help-toggle:hover {
+    background: linear-gradient(45deg, #cce6ff, #99ccff);
+}
+
+.footer {
+    margin-top: 20px;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.9em;
+    font-weight: 300;
 }

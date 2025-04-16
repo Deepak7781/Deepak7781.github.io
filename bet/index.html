@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blade Element Theory</title>
-    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
 </head>
 <body>
     <div class="container">
@@ -13,54 +14,67 @@
             <form id="bet-form">
                 <h2>Input Parameters</h2>
                 <div class="input-group">
-                    <label for="chord">Chord Length (c, m):</label>
-                    <input type="number" id="chord" name="chord" step="any" required>
+                    <label for="chord" title="Length of the blade's cross-section">Chord Length (c, m):</label>
+                    <input type="number" id="chord" name="chord" step="any" placeholder="e.g., 0.2" aria-label="Chord Length in meters" required>
                 </div>
                 <div class="input-group">
-                    <label for="radius">Blade Radius (R, m):</label>
-                    <input type="number" id="radius" name="radius" step="any" required>
+                    <label for="radius" title="Total length of the blade from hub to tip">Blade Radius (R, m):</label>
+                    <input type="number" id="radius" name="radius" step="any" placeholder="e.g., 1.5" aria-label="Blade Radius in meters" required>
                 </div>
                 <div class="input-group">
-                    <label for="twist">Twist Angle (degrees):</label>
-                    <input type="number" id="twist" name="twist" step="any" required>
+                    <label for="twist" title="Angle of blade twist along its length">Twist Angle (degrees):</label>
+                    <input type="number" id="twist" name="twist" step="any" placeholder="e.g., 10" aria-label="Twist Angle in degrees" required>
                 </div>
                 <div class="input-group">
-                    <label for="blades">Number of Blades (B):</label>
-                    <input type="number" id="blades" name="blades" min="1" step="1" required>
+                    <label for="blades" title="Total number of propeller blades">Number of Blades (B):</label>
+                    <input type="number" id="blades" name="blades" min="1" step="1" placeholder="e.g., 3" aria-label="Number of Blades" required>
                 </div>
                 <div class="input-group">
-                    <label for="velocity">Free Stream Velocity (V_inf, m/s):</label>
-                    <input type="number" id="velocity" name="velocity" step="any" required>
+                    <label for="velocity" title="Speed of incoming airflow">Free Stream Velocity (V_inf, m/s):</label>
+                    <input type="number" id="velocity" name="velocity" step="any" placeholder="e.g., 50" aria-label="Free Stream Velocity in meters per second" required>
                 </div>
                 <div class="input-group">
-                    <label for="omega">Angular Velocity (ω, rad/s):</label>
-                    <input type="number" id="omega" name="omega" step="any" required>
+                    <label for="omega" title="Rotational speed of the propeller">Angular Velocity (ω, rad/s):</label>
+                    <input type="number" id="omega" name="omega" step="any" placeholder="e.g., 100" aria-label="Angular Velocity in radians per second" required>
                 </div>
                 <div class="input-group">
-                    <label for="elements">Number of Elements (N):</label>
-                    <input type="number" id="elements" name="elements" min="1" step="1" required>
+                    <label for="elements" title="Number of segments for blade analysis">Number of Elements (N):</label>
+                    <input type="number" id="elements" name="elements" min="1" step="1" placeholder="e.g., 20" aria-label="Number of Elements" required>
                 </div>
                 <div class="input-group">
-                    <label for="airfoil">Airfoil Name (e.g., NACA0012):</label>
-                    <input type="text" id="airfoil" name="airfoil" required>
+                    <label for="airfoil" title="Airfoil type used for the blade">Airfoil Name (e.g., NACA0012):</label>
+                    <input type="text" id="airfoil" name="airfoil" placeholder="e.g., NACA0012" aria-label="Airfoil Name" required>
                 </div>
                 <div class="input-group">
-                    <label for="alpha">Alpha Range (start end step, e.g., -10 10 0.5):</label>
-                    <input type="text" id="alpha" name="alpha" placeholder="-10 10 0.5" required>
+                    <label for="alpha" title="Range of angles of attack for analysis">Alpha Range (start end step):</label>
+                    <input type="text" id="alpha" name="alpha" placeholder="e.g., -10 10 0.5" aria-label="Alpha Range (start end step)" required>
                 </div>
                 <div class="input-group">
-                    <label for="reynolds">Reynolds Number (e.g., 100000):</label>
-                    <input type="number" id="reynolds" name="reynolds" step="1" required>
+                    <label for="reynolds" title="Flow condition affecting lift and drag">Reynolds Number:</label>
+                    <input type="number" id="reynolds" name="reynolds" step="1" placeholder="e.g., 100000" aria-label="Reynolds Number" required>
                 </div>
                 <div class="input-group">
-                    <label for="xfoil-file">Upload XFOIL Data (optional):</label>
-                    <input type="file" id="xfoil-file" name="xfoil-file" accept=".txt">
+                    <label for="xfoil-file" title="Optional XFOIL data for airfoil performance">Upload XFOIL Data (optional):</label>
+                    <input type="file" id="xfoil-file" name="xfoil-file" accept=".txt" aria-label="Upload XFOIL Data">
                 </div>
-                <button type="submit">Run Simulation</button>
+                <div class="button-group">
+                    <button type="submit">Run Simulation</button>
+                    <button type="reset">Reset Form</button>
+                </div>
             </form>
+            <div id="loading">Processing...</div>
             <div id="results"></div>
+            <button id="help-toggle">Show Help</button>
+            <div id="help-section">
+                <h3>How to Use</h3>
+                <p>Enter the required parameters for the Blade Element Theory simulation. Ensure all numeric fields are positive where applicable, and the alpha range follows the format "start end step" (e.g., -10 10 0.5). Upload XFOIL data if available for enhanced accuracy. Click "Run Simulation" to compute results or "Reset Form" to clear inputs.</p>
+            </div>
+        </div>
+        <div class="footer">
+            Blade Element Theory Simulator v1.0 | Designed for Aerospace Analysis
         </div>
     </div>
-    <script src="script.js"></script>
+    <script link = 'script.js'>
+    </script>
 </body>
 </html>
