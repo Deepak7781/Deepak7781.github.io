@@ -1,107 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+/* Reset and body styling */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
     padding-bottom: 80px; /* Space for footer */
-    line-height: 1.6;
-    background-color: #000; /* Black as primary color */
-    color: #fff; /* White text for contrast */
+    line-height: 1.7;
+    background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
+    color: #ffffff;
 }
 
+/* Header section */
 header {
-    background-color: #000;
-    color: #00f; /* Blue as secondary color */
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
     text-align: center;
-    padding: 2.5rem 1rem;
-    border-bottom: 3px solid #00f;
+    padding: 3rem 1rem;
+    border-bottom: 2px solid #1e90ff;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
 }
 
 header h1 {
     margin: 0;
     font-size: 3rem;
-    color: #fff;
+    color: #ffffff;
+    letter-spacing: 1px;
 }
 
 header p {
-    margin: 0.5rem 0;
-    font-size: 1.3rem;
+    margin-top: 1rem;
+    font-size: 1.5rem;
+    color: #1e90ff;
 }
 
+/* Main content */
 main {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 0 1.5rem;
+    max-width: 1100px;
+    margin: 2rem auto;
+    padding: 0 2rem;
 }
 
+/* Section styling */
 section {
     margin: 3rem 0;
 }
 
+/* Section titles */
 h2 {
-    color: #00f; /* Blue headers */
-    font-size: 2rem;
-    border-bottom: 2px solid #00f;
+    font-size: 2.2rem;
+    color: #1e90ff;
+    border-bottom: 2px solid #1e90ff;
     padding-bottom: 0.5rem;
     margin-bottom: 1.5rem;
 }
 
+/* About text */
 #intro p {
-    font-size: 1.1rem;
+    font-size: 1.15rem;
     margin: 1rem 0;
 }
 
+/* Skills list */
 #skills ul {
     list-style: none;
     padding: 0;
 }
 
 #skills li {
-    background: #1a1a1a; /* Darker shade for contrast */
-    padding: 0.8rem;
-    margin: 0.5rem 0;
-    border-left: 4px solid #00f;
+    background: rgba(255, 255, 255, 0.07);
+    backdrop-filter: blur(6px);
+    padding: 1rem;
+    margin: 0.7rem 0;
+    border-left: 5px solid #1e90ff;
+    border-radius: 10px;
     font-size: 1.1rem;
+    transition: background 0.3s;
 }
 
+#skills li:hover {
+    background: rgba(255, 255, 255, 0.12);
+}
+
+/* Project cards */
 .project-card {
-    background: #1a1a1a;
-    padding: 1.5rem;
-    margin: 1.5rem 0;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 255, 0.1); /* Blue shadow */
-    transition: transform 0.3s;
+    background: rgba(255, 255, 255, 0.07);
+    backdrop-filter: blur(8px);
+    padding: 2rem;
+    margin: 2rem 0;
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .project-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-8px);
+    box-shadow: 0 10px 40px rgba(30, 144, 255, 0.4);
 }
 
 .project-card h3 {
-    margin: 0 0 0.5rem;
-    color: #00f;
-    font-size: 1.5rem;
+    margin-top: 0;
+    font-size: 1.8rem;
+    color: #1e90ff;
 }
 
 .project-card p {
-    margin: 0.5rem 0;
+    margin: 0.8rem 0 1rem;
 }
 
 .project-card a {
-    color: #00f;
+    color: #1e90ff;
     text-decoration: none;
     font-weight: bold;
+    font-size: 1rem;
 }
 
 .project-card a:hover {
     text-decoration: underline;
 }
 
+/* Footer section */
 footer {
-    background-color: #000;
-    color: #fff;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
     text-align: center;
-    padding: 1.5rem;
-    border-top: 3px solid #00f;
+    padding: 2rem 1rem;
+    border-top: 2px solid #1e90ff;
+    font-size: 1rem;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.4);
 }
 
 footer p {
@@ -109,7 +135,7 @@ footer p {
 }
 
 footer a {
-    color: #00f;
+    color: #1e90ff;
     text-decoration: none;
     margin: 0 0.5rem;
 }

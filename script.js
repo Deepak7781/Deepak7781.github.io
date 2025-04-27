@@ -14,7 +14,7 @@ const projects = [
 
 function displayProjects(){
     const projectList = document.getElementById("project-list");
-    projectList.innerHTML - "";
+    projectList.innerHTML = "";
 
     projects.forEach(project => {
         const projectCard = document.createElement("div");
